@@ -5,9 +5,9 @@ export default class Header extends Component {
     render() {
         return (
             <header>
-                <div className="main-bg">                
+                {/* <div className="main-bg">                
                     <img src={mainBg} alt="rick-and-morty-gif"></img>
-                </div>
+                </div> */}
             </header>
         )
     }
