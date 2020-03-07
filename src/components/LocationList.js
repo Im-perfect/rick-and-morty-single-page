@@ -14,7 +14,7 @@ export class LocationList extends Component {
     return (
       <div>
         {this.props.locations.map(location => (
-          <p key={location.id}>{location.name}</p>
+          <p key={location.id}>{location.name}<strong>{location.residents.length} residents</strong></p>
         ))}
       </div>
     );
