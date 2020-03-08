@@ -4,14 +4,13 @@ import { baseUrl } from "../constants";
 export const GET_EPISODES = "GET_EPISODES";
 export const GET_EPISODE_DETAILS = "GET_EPISODE_DETAILS";
 
-export const getEpisodes = () => (dispatch, getState) => {
-  if (getState().episodes) return;
+export const getEpisodes = (pageId) => (dispatch, getState) => {
   request
-    .get(`${baseUrl}/episode`)
+    .get(`${baseUrl}/episode/?page=${pageId}`)
     .then(res => {
       dispatch({
         type: GET_EPISODES,
-        episodes: res.body.results
+        payload: res.body
       });
     })
     .catch(error => {
