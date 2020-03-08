@@ -14,31 +14,34 @@ export class LocationDetails extends Component {
   componentDidMount = () => {
     this.props
       .getLocationDetails(parseInt(this.props.match.params.locationId))
-      .then(() =>
-        getLocationCharacters(
-          this.props.location.residents.map(url => url.slice(42)).join(",")
-        ).then(res =>
-          this.setState({
-            residents: res
-          })
-        )
-      );
+      .then(() => {
+        if (this.props.location.residents.length) {
+          const characterList = this.props.location.residents
+            .map(url => url.slice(42))
+            .join(",");
+          getLocationCharacters(characterList).then(res =>
+            this.setState({
+              residents: res
+            })
+          );
+        }
+      });
   };
 
   render() {
     const location = this.props.location;
     const residents = this.state.residents;
 
-    if (!location || !residents) return loadingMsg;
+    if (!location || (!residents && location.residents.length))
+      return loadingMsg;
 
     return (
       <div>
         <LocationCard info={location} />
-        {!residents.length
-          ? "No residents"
-          : residents.map(resident => (
-              <CharacterCard key={resident.id} info={resident} />
-            ))}
+        {residents &&
+          residents.map(resident => (
+            <CharacterCard key={resident.id} info={resident} />
+          ))}
       </div>
     );
   }

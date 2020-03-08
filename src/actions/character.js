@@ -22,7 +22,7 @@ export const getLocationCharacters = characterList => {
   return request
     .get(`${baseUrl}/character/${characterList}`)
     .then(res => {
-      return res.body;
+      return res.body.constructor === Object ? [res.body] : res.body;
     })
     .catch(error => {
       console.log(error);
@@ -30,11 +30,10 @@ export const getLocationCharacters = characterList => {
 };
 
 export const getEpisodeCharacters = characterList => {
-  console.log(characterList)
   return request
     .get(`${baseUrl}/character/${characterList}`)
     .then(res => {
-      return res.body;
+      return res.body.constructor === Object ? [res.body] : res.body;
     })
     .catch(error => {
       console.log(error);
