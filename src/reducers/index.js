@@ -5,6 +5,7 @@ import locations from './locations'
 import location from './location'
 import episodes from './episodes'
 import currentEpisode from './currentEpisode'
+import dimensions from './dimensions'
 
 export default combineReducers({
     info,
@@ -12,5 +13,6 @@ export default combineReducers({
     locations,
     location,
     episodes,
-    currentEpisode
+    currentEpisode,
+    dimensions
 })
