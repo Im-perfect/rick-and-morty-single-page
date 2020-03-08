@@ -17,3 +17,14 @@ export const getCharacters = () => (dispatch, getState) => {
       console.log(error);
     });
 };
+
+export const getLocationCharacters = characterList => {
+  return request
+    .get(`${baseUrl}/character/${characterList}`)
+    .then(res => {
+      return res.body;
+    })
+    .catch(error => {
+      console.log(error);
+    });
+};

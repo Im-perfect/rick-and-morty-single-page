@@ -21,13 +21,16 @@ export const getLocations = () => (dispatch, getState) => {
 
 export const getLocationDetails = id => (dispatch, getState) => {
   if (getState().locations) {
-    return dispatch({
-      type: GET_LOCATION_DETAILS,
-      location: getState().locations.find(location => location.id === id)
+    return new Promise((resolve, reject) => {
+      dispatch({
+        type: GET_LOCATION_DETAILS,
+        location: getState().locations.find(location => location.id === id)
+      });
+      resolve();
     });
   }
 
-  request
+  return request
     .get(`${baseUrl}/location/${id}`)
     .then(res => {
       dispatch({
