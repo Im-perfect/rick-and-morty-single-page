@@ -14,7 +14,7 @@ export class EpisodeList extends Component {
     return (
       <div>
         {this.props.episodes.map(episode => (
-          <Link to={`/episodes/${episode.id}`}>
+          <Link to={`/episodes/${episode.id}`} key={episode.id}>
             <EpisodeCard info={episode} />
           </Link>
         ))}

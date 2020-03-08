@@ -28,3 +28,15 @@ export const getLocationCharacters = characterList => {
       console.log(error);
     });
 };
+
+export const getEpisodeCharacters = characterList => {
+  console.log(characterList)
+  return request
+    .get(`${baseUrl}/character/${characterList}`)
+    .then(res => {
+      return res.body;
+    })
+    .catch(error => {
+      console.log(error);
+    });
+};
