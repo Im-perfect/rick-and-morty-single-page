@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import EpisodeCard from "./EpisodeCard";
 import { getEpisodes } from "../actions/episode";
 import { loadingMsg } from "../constants";
 
@@ -12,9 +14,9 @@ export class EpisodeList extends Component {
     return (
       <div>
         {this.props.episodes.map(episode => (
-          <p key={episode.id}>
-            {episode.name},{episode.air_date}
-          </p>
+          <Link to={`/episodes/${episode.id}`}>
+            <EpisodeCard info={episode} />
+          </Link>
         ))}
       </div>
     );
