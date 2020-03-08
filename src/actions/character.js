@@ -3,14 +3,13 @@ import { baseUrl } from "../constants";
 
 export const GET_CHARACTERS = "GET_CHARACTERS";
 
-export const getCharacters = () => (dispatch, getState) => {
-  if (getState().characters) return;
+export const getCharacters = pageId => (dispatch, getState) => {
   request
-    .get(`${baseUrl}/character`)
+    .get(`${baseUrl}/character/?page=${pageId}`)
     .then(res => {
       dispatch({
         type: GET_CHARACTERS,
-        characters: res.body.results
+        payload: res.body
       });
     })
     .catch(error => {
