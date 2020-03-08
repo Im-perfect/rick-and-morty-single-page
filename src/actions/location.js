@@ -4,14 +4,13 @@ import { baseUrl } from "../constants";
 export const GET_LOCATIONS = "GET_LOCATIONS";
 export const GET_LOCATION_DETAILS = "GET_LOCATION_DETAILS";
 
-export const getLocations = () => (dispatch, getState) => {
-  if (getState().locations) return;
+export const getLocations = (pageId) => (dispatch, getState) => {
   request
-    .get(`${baseUrl}/location`)
+    .get(`${baseUrl}/location/?page=${pageId}`)
     .then(res => {
       dispatch({
         type: GET_LOCATIONS,
-        locations: res.body.results
+        payload: res.body
       });
     })
     .catch(error => {
