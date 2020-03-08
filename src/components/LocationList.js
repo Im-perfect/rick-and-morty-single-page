@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { getLocations } from "../actions/location";
 import { loadingMsg } from "../constants";
+import LocationCard from "./LocationCard";
 
 export class LocationList extends Component {
   componentDidMount = () => {
@@ -14,7 +16,9 @@ export class LocationList extends Component {
     return (
       <div>
         {this.props.locations.map(location => (
-          <p key={location.id}>{location.name}<strong>{location.residents.length} residents</strong></p>
+          <Link to={`/locations/${location.id}`}>
+            <LocationCard info={location} />
+          </Link>
         ))}
       </div>
     );
