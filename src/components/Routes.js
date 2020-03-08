@@ -4,6 +4,7 @@ import DimensionList from "./DimensionList";
 import LocationList from "./LocationList";
 import LocationDetails from './LocationDetails'
 import EpisodeList from "./EpisodeList";
+import EpisodeDetails from './EpisodeDetails'
 import CharacterList from "./CharacterList";
 
 export default class Routes extends Component {
@@ -14,6 +15,7 @@ export default class Routes extends Component {
         <Route path="/locations" exact component={LocationList} />
         <Route path="/locations/:locationId" exact component={LocationDetails} />
         <Route path="/episodes" exact component={EpisodeList} />
+        <Route path="/episodes/:episodeId" exact component={EpisodeDetails} />
         <Route path="/characters" exact component={CharacterList} />
       </div>
     );
