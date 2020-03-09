@@ -1,13 +1,51 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class CharacterCard extends Component {
-    render() {
-        const {name, id, image} = this.props.info
-        return (
-            <div>
-                <img src={image} alt="profile" width="128px" height="128px"/>
-                {id}, {name}
-            </div>
-        )
-    }
+  render() {
+    const {
+      name,
+      image,
+      status,
+      species,
+      type,
+      gender,
+      origin,
+      location
+    } = this.props.info;
+
+    return (
+      <div className="card card-character">
+        <div className="card-image">
+          <img src={image} alt="profile" />
+        </div>
+        <h2>{name}</h2>
+        <div className="card-info">
+          <div className="card-info-row">
+            <h4>status</h4>
+            <p>{status}</p>
+          </div>
+          <div className="card-info-row">
+            <h4>species</h4>
+            <p>{species}</p>
+          </div>
+          <div className="card-info-row">
+            <h4>type</h4>
+            <p>{type === "" ? <span>Unknown</span> : type}</p>
+          </div>
+          <div className="card-info-row">
+            <h4>gender</h4>
+            <p>{gender}</p>
+          </div>
+          <div className="card-info-row">
+            <h4>Origin</h4>
+            <p>{origin.name}</p>
+          </div>
+          <div className="card-info-row">
+            <h4>last location</h4>
+            <p>{location.name}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }

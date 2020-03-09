@@ -39,9 +39,12 @@ export class CharacterList extends Component {
     if (!this.props.characters) return loadingMsg;
     return (
       <div>
-        {this.props.characters.map(character => (
-          <CharacterCard key={character.id} info={character} />
-        ))}
+        <div className="card-container">
+          {this.props.characters.map(character => (
+            <CharacterCard key={character.id} info={character} />
+          ))}
+        </div>
+
         <Pagination
           totalPage={this.props.info.pages}
           currentPage={this.state.currentPage}

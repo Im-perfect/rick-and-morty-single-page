@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Carrois+Gothic&display=swap");
 
+@import "../src/css/card.css";
+
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -21,11 +23,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px;
+  padding: 40px;
 }
 
 .wrapper img {
   width: 100%;
+  height: auto;
 }
 
 .nav {
@@ -73,7 +76,7 @@ footer {
 
 @media screen and (max-width: 680px) {
   .wrapper {
-    padding: 40px;
+    padding: 20px;
   }
 
   .nav-item {
@@ -99,6 +102,5 @@ footer {
 
   .nav-item {
     border-right: 1px solid #cccccc;
-    ;
   }
 }
