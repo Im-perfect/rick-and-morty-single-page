@@ -5,6 +5,7 @@ export default class Navigation extends Component {
   render() {
     return (
       <div>
+        <Link to="/">Home</Link>
         <Link to="/dimensions">Dimension</Link>
         <Link to="/locations">Location</Link>
         <Link to="/episodes">Episodes</Link>
