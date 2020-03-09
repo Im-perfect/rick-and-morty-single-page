@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "./components/Header";
-import Route from "./components/Routes";
-import "./App.css";
+import Navigation from "./components/Navigation";
+import Routes from "./components/Routes";
 
 function App() {
   return (
     <div>
-      <Header />
       <main>
-        <Route />
+        <Navigation />
+        <Routes />
       </main>
       <footer>
         <p>Ke Zhang @2020</p>
