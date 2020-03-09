@@ -35,3 +35,25 @@ export const getDimensions = dimensions => {
     dimensions
   };
 };
+
+export const getDimensionCharacters = name => {
+  return request
+    .get(`${baseUrl}/location/?dimension=${encodeURI(name)}`)
+    .then(res => {
+      const characterList = res.body.results
+        .map(location =>
+          location.residents.map(resident => resident.slice(42)).join(",")
+        )
+        .join(",");
+
+      return request
+        .get(`${baseUrl}/character/${characterList}`)
+        .then(res => res.body)
+        .catch(error => {
+          console.log(error);
+        });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+};

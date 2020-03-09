@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import DimensionList from "./DimensionList";
+import DimensionDetails from './DimensionDetails'
 import LocationList from "./LocationList";
 import LocationDetails from './LocationDetails'
 import EpisodeList from "./EpisodeList";
@@ -12,6 +13,7 @@ export default class Routes extends Component {
     return (
       <div>
         <Route path="/dimensions" exact component={DimensionList} />
+        <Route path="/dimensions/:dimensionName" exact component={DimensionDetails} />
         <Route path="/locations" exact component={LocationList} />
         <Route path="/locations/:locationId" exact component={LocationDetails} />
         <Route path="/episodes" exact component={EpisodeList} />

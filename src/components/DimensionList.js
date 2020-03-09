@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchDimensions, getDimensions } from "../actions/dimension";
 import { loadingMsg } from "../constants";
 
@@ -14,7 +15,9 @@ export class DimensionList extends Component {
     return (
       <div>
         {this.props.dimensions.map(dimension => (
-          <p>{dimension}</p>
+          <Link to={`/dimensions/${dimension}`} key={dimension}>
+            <p>{dimension}</p>
+          </Link>
         ))}
       </div>
     );
