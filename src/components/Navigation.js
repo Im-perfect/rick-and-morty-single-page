@@ -7,7 +7,7 @@ export default class Navigation extends Component {
       <div>
         <Link to="/dimensions">Dimension</Link>
         <Link to="/locations">Location</Link>
-        <Link to="/episodes">episodes</Link>
+        <Link to="/episodes">Episodes</Link>
         <Link to="/characters">Characters</Link>
       </div>
     );
