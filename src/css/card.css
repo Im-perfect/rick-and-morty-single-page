@@ -78,6 +78,10 @@
   color: #cccccc;
 }
 
+.card-text {
+    text-align: center;
+}
+
 .card-character {
   min-height: 440px;
 }

@@ -21,14 +21,18 @@ export class DimensionDetails extends Component {
     if (!characters) return loadingMsg;
 
     return (
-      <div>
-        <p>
-          {this.props.match.params.dimensionName} has{" "}
-          <strong>{characters.length} characters</strong>
-        </p>
-        {characters.map(character => (
-          <CharacterCard info={character} key={character.id} />
-        ))}
+      <div className="details-container">
+        <div className="card card-dimension">
+          <h2>{this.props.match.params.dimensionName}</h2>
+          <p className="card-text">{characters.length} characters</p>
+        </div>
+        <div className="card-container">
+          {characters.map(character => (
+            <div className="card-wrapper">
+              <CharacterCard info={character} key={character.id} />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

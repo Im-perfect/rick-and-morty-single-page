@@ -78,7 +78,8 @@ main {
   margin-top: 40px;
 }
 
-.details-container .card-location:hover {
+.details-container .card-location:hover,
+.details-container .card-dimension:hover {
   transform: none;
   box-shadow: none;
 }
