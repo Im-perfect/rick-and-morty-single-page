@@ -31,18 +31,24 @@ export class EpisodeList extends Component {
       currentPage: page
     });
   };
+
   componentDidMount = () => {
     this.props.getEpisodes(this.state.currentPage);
   };
+
   render() {
     if (!this.props.episodes) return loadingMsg;
     return (
       <div>
-        {this.props.episodes.map(episode => (
-          <Link to={`/episodes/${episode.id}`} key={episode.id}>
-            <EpisodeCard info={episode} />
-          </Link>
-        ))}
+        <div className="card-container">
+          {this.props.episodes.map(episode => (
+            <div className="card-wrapper">
+              <Link to={`/episodes/${episode.id}`} key={episode.id}>
+                <EpisodeCard info={episode} />
+              </Link>
+            </div>
+          ))}
+        </div>
         <Pagination
           totalPage={this.props.info.pages}
           currentPage={this.state.currentPage}

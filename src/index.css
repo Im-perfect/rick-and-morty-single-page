@@ -79,7 +79,8 @@ main {
 }
 
 .details-container .card-location:hover,
-.details-container .card-dimension:hover {
+.details-container .card-dimension:hover,
+.details-container .card-episode:hover {
   transform: none;
   box-shadow: none;
 }

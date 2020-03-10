@@ -34,13 +34,16 @@ export class EpisodeDetails extends Component {
     if (!episode || !characters) return loadingMsg;
 
     return (
-      <div>
+      <div className="details-container">
         <EpisodeCard info={episode} />
-        {!characters.length
-          ? "No characters"
-          : characters.map(character => (
-              <CharacterCard key={character.id} info={character} />
+        <div className="card-container">
+          {characters.length &&
+            characters.map(character => (
+              <div className="card-wrapper">
+                <CharacterCard key={character.id} info={character} />{" "}
+              </div>
             ))}
+        </div>
       </div>
     );
   }
