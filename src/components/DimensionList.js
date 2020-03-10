@@ -13,11 +13,13 @@ export class DimensionList extends Component {
     if (!this.props.dimensions) return loadingMsg;
 
     return (
-      <div>
+      <div className="card-container">
         {this.props.dimensions.map(dimension => (
-          <Link to={`/dimensions/${dimension}`} key={dimension}>
-            <p>{dimension}</p>
-          </Link>
+          <div className="card-wrapper">
+            <Link to={`/dimensions/${dimension}`} key={dimension}>
+              <div className="card card-dimension"><h2>{dimension}</h2></div>
+            </Link>
+          </div>
         ))}
       </div>
     );
