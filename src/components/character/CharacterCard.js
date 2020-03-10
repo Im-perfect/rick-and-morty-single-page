@@ -38,11 +38,19 @@ export default class CharacterCard extends Component {
           </div>
           <div className="card-info-row">
             <h4>Origin</h4>
-            <p>{origin.name === "unknown" ? <span>Unknown</span> : origin.name}</p>
+            <p>
+              {origin.name === "unknown" ? <span>Unknown</span> : origin.name}
+            </p>
           </div>
           <div className="card-info-row">
             <h4>last location</h4>
-            <p>{location.name === "unknown" ? <span>Unknown</span> : location.name}</p>
+            <p>
+              {location.name === "unknown" ? (
+                <span>Unknown</span>
+              ) : (
+                location.name
+              )}
+            </p>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { baseUrl } from "../constants";
 export const GET_EPISODES = "GET_EPISODES";
 export const GET_EPISODE_DETAILS = "GET_EPISODE_DETAILS";
 
-export const getEpisodes = (pageId) => (dispatch, getState) => {
+export const getEpisodes = pageId => (dispatch, getState) => {
   request
     .get(`${baseUrl}/episode/?page=${pageId}`)
     .then(res => {
