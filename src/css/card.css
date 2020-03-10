@@ -4,9 +4,16 @@
   flex-wrap: wrap;
 }
 
+.card-wrapper {
+  padding: 14px;
+}
+
+.card-wrapper a {
+  text-decoration: none;
+}
+
 .card {
   width: 240px;
-  margin: 30px 15px;
   border: 1px solid #cad5d6;
   border-radius: 10px;
   padding: 10px;
@@ -54,9 +61,12 @@
 }
 
 .card-info-row h4 {
-  text-transform: capitalize;
   margin: 8px 0;
   width: 56px;
+}
+
+.card-info-row h4::first-letter {
+  text-transform: capitalize;
 }
 
 .card-info-row p {
@@ -66,4 +76,8 @@
 
 .card-info-row p span {
   color: #cccccc;
+}
+
+.card-location h2 {
+  margin-top: 24px;
 }

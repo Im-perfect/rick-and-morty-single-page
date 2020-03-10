@@ -41,7 +41,9 @@ export class CharacterList extends Component {
       <div>
         <div className="card-container">
           {this.props.characters.map(character => (
-            <CharacterCard key={character.id} info={character} />
+            <div className="card-wrapper">
+              <CharacterCard key={character.id} info={character} />
+            </div>
           ))}
         </div>
 
