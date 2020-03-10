@@ -3,15 +3,16 @@ import { baseUrl } from "../constants";
 
 export const GET_DIMENSIONS = "GET_DIMENSIONS";
 
+let dimensions = [];
+
 export const fetchDimensions = () => {
-  let dimensions = [];
   return getDimensionFromLocation(
     `${baseUrl}/location/?page=1`,
     dimensions
   ).then(() => dimensions);
 };
 
-const getDimensionFromLocation = (url, dimensions) => {
+const getDimensionFromLocation = (url) => {
   return request
     .get(url)
     .then(res => {
