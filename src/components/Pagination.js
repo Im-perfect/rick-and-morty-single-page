@@ -4,10 +4,14 @@ export default class Pagination extends Component {
   render() {
     const { currentPage, totalPage, handlePrev, handleNext } = this.props;
     return (
-      <div>
-        Page {`${currentPage}/${totalPage}`}
-        <button onClick={handlePrev}>Prev</button>
-        <button onClick={handleNext}>Next</button>
+      <div className="pagination">
+        <button onClick={handlePrev} className="pagination-button">
+          Prev
+        </button>
+        <p>{`${currentPage}/${totalPage}`}</p>
+        <button onClick={handleNext} className="pagination-button">
+          Next
+        </button>
       </div>
     );
   }
