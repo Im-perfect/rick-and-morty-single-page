@@ -22,27 +22,27 @@ export default class CharacterCard extends Component {
         <div className="card-info">
           <div className="card-info-row">
             <h4>status</h4>
-            <p>{status}</p>
+            <p>{status === "unknown" ? <span>Unknown</span> : status}</p>
           </div>
           <div className="card-info-row">
             <h4>species</h4>
-            <p>{species}</p>
+            <p>{species === "unknown" ? <span>Unknown</span> : species}</p>
           </div>
           <div className="card-info-row">
             <h4>type</h4>
-            <p>{type === "" ? <span>Unknown</span> : type}</p>
+            <p>{type === "" || "unknown" ? <span>Unknown</span> : type}</p>
           </div>
           <div className="card-info-row">
             <h4>gender</h4>
-            <p>{gender}</p>
+            <p>{gender === "unknown" ? <span>Unknown</span> : gender}</p>
           </div>
           <div className="card-info-row">
             <h4>Origin</h4>
-            <p>{origin.name}</p>
+            <p>{origin.name === "unknown" ? <span>Unknown</span> : origin.name}</p>
           </div>
           <div className="card-info-row">
             <h4>last location</h4>
-            <p>{location.name}</p>
+            <p>{location.name === "unknown" ? <span>Unknown</span> : location.name}</p>
           </div>
         </div>
       </div>
