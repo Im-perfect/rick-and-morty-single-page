@@ -39,8 +39,8 @@ export class EpisodeDetails extends Component {
         <div className="card-container">
           {characters.length &&
             characters.map(character => (
-              <div className="card-wrapper">
-                <CharacterCard key={character.id} info={character} />{" "}
+              <div className="card-wrapper" key={character.id}>
+                <CharacterCard info={character} />
               </div>
             ))}
         </div>

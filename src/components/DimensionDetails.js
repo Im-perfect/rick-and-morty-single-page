@@ -28,8 +28,8 @@ export class DimensionDetails extends Component {
         </div>
         <div className="card-container">
           {characters.map(character => (
-            <div className="card-wrapper">
-              <CharacterCard info={character} key={character.id} />
+            <div className="card-wrapper" key={character.id}>
+              <CharacterCard info={character} />
             </div>
           ))}
         </div>

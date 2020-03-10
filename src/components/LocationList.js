@@ -43,13 +43,14 @@ export class LocationList extends Component {
       <div>
         <div className="card-container">
           {this.props.locations.map(location => (
-            <div className="card-wrapper">
-            <Link to={`/locations/${location.id}`} key={location.id}>
-              <LocationCard info={location} />
-            </Link>
+            <div className="card-wrapper" key={location.id}>
+              <Link to={`/locations/${location.id}`}>
+                <LocationCard info={location} />
+              </Link>
             </div>
           ))}
         </div>
+
         <Pagination
           totalPage={this.props.info.pages}
           currentPage={this.state.currentPage}

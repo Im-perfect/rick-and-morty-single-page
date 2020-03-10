@@ -40,12 +40,12 @@ export class LocationDetails extends Component {
         <LocationCard info={location} />
         <div className="card-container">
           {residents &&
-          residents.map(resident => (
-            <div className="card-wrapper">
-            <CharacterCard key={resident.id} info={resident} />
-            </div>
-          ))}
-        </div>      
+            residents.map(resident => (
+              <div className="card-wrapper" key={resident.id}>
+                <CharacterCard info={resident} />
+              </div>
+            ))}
+        </div>
       </div>
     );
   }

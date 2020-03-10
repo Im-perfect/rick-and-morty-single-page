@@ -42,8 +42,8 @@ export class EpisodeList extends Component {
       <div>
         <div className="card-container">
           {this.props.episodes.map(episode => (
-            <div className="card-wrapper">
-              <Link to={`/episodes/${episode.id}`} key={episode.id}>
+            <div className="card-wrapper" key={episode.id}>
+              <Link to={`/episodes/${episode.id}`}>
                 <EpisodeCard info={episode} />
               </Link>
             </div>
