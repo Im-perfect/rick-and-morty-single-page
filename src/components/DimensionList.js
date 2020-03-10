@@ -14,15 +14,18 @@ export class DimensionList extends Component {
 
     return (
       <div className="card-container">
-        {this.props.dimensions.map(dimension => (
-          <div className="card-wrapper" key={dimension}>
-            <Link to={`/dimensions/${dimension}`}>
-              <div className="card card-dimension">
-                <h2>{dimension}</h2>
+        {this.props.dimensions.map(
+          dimension =>
+            dimension !== "unknown" && (
+              <div className="card-wrapper" key={dimension}>
+                <Link to={`/dimensions/${dimension}`}>
+                  <div className="card card-dimension">
+                    <h2>{dimension}</h2>
+                  </div>
+                </Link>
               </div>
-            </Link>
-          </div>
-        ))}
+            )
+        )}
       </div>
     );
   }
