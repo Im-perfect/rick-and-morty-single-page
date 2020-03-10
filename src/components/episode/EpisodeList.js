@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import EpisodeCard from "./EpisodeCard";
-import Pagination from "./Pagination";
-import { getEpisodes } from "../actions/episode";
-import { loadingMsg } from "../constants";
+import Pagination from "../Pagination";
+import { getEpisodes } from "../../actions/episode";
+import { loadingMsg } from "../../constants";
 
 export class EpisodeList extends Component {
   state = {

@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getCharacters } from "../actions/character";
-import { loadingMsg } from "../constants";
-import Pagination from "./Pagination";
-import CharacterCard from "./CharacterCard";
+import { Link } from "react-router-dom";
+import { getLocations } from "../../actions/location";
+import { loadingMsg } from "../../constants";
+import LocationCard from "./LocationCard";
+import Pagination from "../Pagination";
 
-export class CharacterList extends Component {
+export class LocationList extends Component {
   state = {
     currentPage: 1
   };
 
   handlePrev = () => {
     const page = this.state.currentPage === 1 ? 1 : this.state.currentPage - 1;
-    this.props.getCharacters(page);
+    this.props.getLocations(page);
 
     this.setState({
       currentPage: page
@@ -24,7 +25,7 @@ export class CharacterList extends Component {
       this.state.currentPage === this.props.info.pages
         ? this.props.info.pages
         : this.state.currentPage + 1;
-    this.props.getCharacters(page);
+    this.props.getLocations(page);
 
     this.setState({
       currentPage: page
@@ -32,17 +33,20 @@ export class CharacterList extends Component {
   };
 
   componentDidMount = () => {
-    this.props.getCharacters(this.state.currentPage);
+    this.props.getLocations(this.state.currentPage);
   };
 
   render() {
-    if (!this.props.characters) return loadingMsg;
+    if (!this.props.locations) return loadingMsg;
+
     return (
       <div>
         <div className="card-container">
-          {this.props.characters.map(character => (
-            <div className="card-wrapper" key={character.id}>
-              <CharacterCard info={character} />
+          {this.props.locations.map(location => (
+            <div className="card-wrapper" key={location.id}>
+              <Link to={`/locations/${location.id}`}>
+                <LocationCard info={location} />
+              </Link>
             </div>
           ))}
         </div>
@@ -58,8 +62,10 @@ export class CharacterList extends Component {
   }
 }
 
-const mapStateToProps = ({ characters, info }) => ({ characters, info });
+const mapStateToProps = ({ locations, info }) => ({ locations, info });
 
-const mapDispatchToProps = { getCharacters };
+const mapDispatchToProps = {
+  getLocations
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterList);
+export default connect(mapStateToProps, mapDispatchToProps)(LocationList);

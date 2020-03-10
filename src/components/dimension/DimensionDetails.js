@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getDimensionCharacters } from "../actions/dimension";
-import { loadingMsg } from "../constants";
-import CharacterCard from "./CharacterCard";
+import { getDimensionCharacters } from "../../actions/dimension";
+import { loadingMsg } from "../../constants";
+import CharacterCard from "../character/CharacterCard";
 
 export class DimensionDetails extends Component {
   state = {

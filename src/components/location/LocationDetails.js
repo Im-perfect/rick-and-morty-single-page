@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getLocationDetails } from "../actions/location";
-import { getLocationCharacters } from "../actions/character";
-import { loadingMsg } from "../constants";
+import { getLocationDetails } from "../../actions/location";
+import { getLocationCharacters } from "../../actions/character";
+import { loadingMsg } from "../../constants";
 import LocationCard from "./LocationCard";
-import CharacterCard from "./CharacterCard";
+import CharacterCard from "../character/CharacterCard";
 
 export class LocationDetails extends Component {
   state = {

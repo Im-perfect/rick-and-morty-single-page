@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchDimensions, dispatchDimensions } from "../actions/dimension";
-import { loadingMsg } from "../constants";
+import { fetchDimensions, dispatchDimensions } from "../../actions/dimension";
+import { loadingMsg } from "../../constants";
 
 export class DimensionList extends Component {
   componentDidMount = () => {

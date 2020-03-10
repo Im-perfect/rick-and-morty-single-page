@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import EpisodeCard from "./EpisodeCard";
-import CharacterCard from "./CharacterCard";
-import { getEpisodeDetails } from "../actions/episode";
-import { getEpisodeCharacters } from "../actions/character";
-import { loadingMsg } from "../constants";
+import CharacterCard from "../character/CharacterCard";
+import { getEpisodeDetails } from "../../actions/episode";
+import { getEpisodeCharacters } from "../../actions/character";
+import { loadingMsg } from "../../constants";
 
 export class EpisodeDetails extends Component {
   state = {

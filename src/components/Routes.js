@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import Home from './Home'
-import DimensionList from "./DimensionList";
-import DimensionDetails from './DimensionDetails'
-import LocationList from "./LocationList";
-import LocationDetails from './LocationDetails'
-import EpisodeList from "./EpisodeList";
-import EpisodeDetails from './EpisodeDetails'
-import CharacterList from "./CharacterList";
+import DimensionList from "./dimension/DimensionList";
+import DimensionDetails from './dimension/DimensionDetails'
+import LocationList from "./location/LocationList";
+import LocationDetails from './location/LocationDetails'
+import EpisodeList from "./episode/EpisodeList";
+import EpisodeDetails from './episode/EpisodeDetails'
+import CharacterList from "./character/CharacterList";
 
 export default class Routes extends Component {
   render() {
