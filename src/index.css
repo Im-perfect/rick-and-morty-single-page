@@ -1,13 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Carrois+Gothic&display=swap");
+
+@import "../src/css/card.css";
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main {
+  width: 85vw;
+  min-height: 80vh;
+  max-width: 1024px;
+  margin: 35px auto;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.nav {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  font-family: "Carrois Gothic", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+  text-transform: uppercase;
+  padding: 0 12px;
+}
+
+.nav-item:not(:last-child) {
+  border-right: 1px solid #cccccc;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #666666;
+}
+
+.nav-item:hover a {
+  color: #111111;
+}
+
+.is-active a {
+  border-bottom: 1px solid #111111;
+  color: #ce312d;
+  pointer-events: none;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-container .card-container {
+  margin-top: 40px;
+}
+
+.details-container .card-location:hover,
+.details-container .card-dimension:hover,
+.details-container .card-episode:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.pagination {
+  font-family: "Carrois Gothic", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+  text-transform: uppercase;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-button {
+  text-transform: uppercase;
+  border: 1px solid #000000;
+  cursor: pointer;
+  margin: 0 8px;
+  padding: 3px 6px;
+}
+
+.pagination-button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+footer {
+  font-size: 14px;
+  text-align: center;
+  color: #666666;
+}
+
+@media screen and (max-width: 680px) {
+  .wrapper {
+    padding: 20px;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .wrapper {
+    padding: 40px;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+  }
+
+  .nav-item {
+    border-right: 1px solid #cccccc;
+  }
 }
