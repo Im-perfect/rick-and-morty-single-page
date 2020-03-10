@@ -68,6 +68,21 @@ main {
   pointer-events: none;
 }
 
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-container .card-container {
+  margin-top: 40px;
+}
+
+.details-container .card-location:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 footer {
   font-size: 14px;
   text-align: center;

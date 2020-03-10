@@ -36,12 +36,16 @@ export class LocationDetails extends Component {
       return loadingMsg;
 
     return (
-      <div>
+      <div className="details-container">
         <LocationCard info={location} />
-        {residents &&
+        <div className="card-container">
+          {residents &&
           residents.map(resident => (
+            <div className="card-wrapper">
             <CharacterCard key={resident.id} info={resident} />
+            </div>
           ))}
+        </div>      
       </div>
     );
   }

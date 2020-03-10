@@ -5,7 +5,7 @@
 }
 
 .card-wrapper {
-  padding: 14px;
+  padding: 24px 14px;
 }
 
 .card-wrapper a {
@@ -78,6 +78,24 @@
   color: #cccccc;
 }
 
+.card-character {
+  min-height: 440px;
+}
+
+.card-location {
+  min-height: 300px;
+}
+
+.card-location:hover {
+  box-shadow: 0px 3px 40px 0px rgb(252, 68, 68, 0.5),
+    0px 0px 0px 5px rgba(255, 74, 74, 0.3);
+  transform: scale(1.1);
+}
+
 .card-location h2 {
   margin-top: 24px;
+}
+
+.card-location .card-info-row h4 {
+  width: 78px;
 }
