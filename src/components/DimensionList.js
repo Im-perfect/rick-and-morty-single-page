@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchDimensions, getDimensions } from "../actions/dimension";
+import { fetchDimensions, dispatchDimensions } from "../actions/dimension";
 import { loadingMsg } from "../constants";
 
 export class DimensionList extends Component {
   componentDidMount = () => {
-    fetchDimensions().then(res => this.props.getDimensions(res));
+    fetchDimensions().then(res => this.props.dispatchDimensions(res));
   };
 
   render() {
@@ -30,6 +30,6 @@ export class DimensionList extends Component {
 
 const mapStateToProps = ({ dimensions }) => ({ dimensions });
 
-const mapDispatchToProps = { getDimensions };
+const mapDispatchToProps = { dispatchDimensions };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DimensionList);

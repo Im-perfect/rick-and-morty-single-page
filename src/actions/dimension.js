@@ -3,17 +3,14 @@ import { baseUrl } from "../constants";
 
 export const GET_DIMENSIONS = "GET_DIMENSIONS";
 
-let dimensions = [];
-
 export const fetchDimensions = () => {
-  return getDimensionFromLocation(
-    `${baseUrl}/location/?page=1`,
-    dimensions
-  ).then(() => dimensions);
+  return new Promise((resolve, reject) =>
+    getDimensionFromLocation(`${baseUrl}/location/?page=1`, [], resolve)
+  );
 };
 
-const getDimensionFromLocation = (url) => {
-  return request
+const getDimensionFromLocation = (url, dimensions, resolve) => {
+  request
     .get(url)
     .then(res => {
       res.body.results.forEach(location => {
@@ -22,7 +19,9 @@ const getDimensionFromLocation = (url) => {
         }
       });
       if (res.body.info.next.length) {
-        getDimensionFromLocation(res.body.info.next);
+        getDimensionFromLocation(res.body.info.next, dimensions, resolve);
+      } else {
+        resolve(dimensions);
       }
     })
     .catch(error => {
@@ -30,7 +29,7 @@ const getDimensionFromLocation = (url) => {
     });
 };
 
-export const getDimensions = dimensions => {
+export const dispatchDimensions = dimensions => {
   return {
     type: GET_DIMENSIONS,
     dimensions
