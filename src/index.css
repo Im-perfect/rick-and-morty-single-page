@@ -31,43 +31,6 @@ main {
   height: auto;
 }
 
-.nav {
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-item {
-  border-bottom: 1px solid transparent;
-  cursor: pointer;
-  font-family: "Carrois Gothic", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  outline: none;
-  text-transform: uppercase;
-  padding: 0 12px;
-}
-
-.nav-item:not(:last-child) {
-  border-right: 1px solid #cccccc;
-}
-
-.nav-item a {
-  text-decoration: none;
-  color: #666666;
-}
-
-.nav-item:hover a {
-  color: #111111;
-}
-
-.is-active a {
-  border-bottom: 1px solid #111111;
-  color: #ce312d;
-  pointer-events: none;
-}
-
 .details-container {
   display: flex;
   flex-direction: column;
@@ -95,29 +58,10 @@ footer {
   .wrapper {
     padding: 20px;
   }
-
-  .nav-item {
-    font-size: 14px;
-  }
 }
 
 @media screen and (max-width: 560px) {
   .wrapper {
     padding: 40px;
-  }
-
-  .nav {
-    flex-direction: column;
-  }
-
-  .nav-item {
-    font-size: 14px;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 8px;
-  }
-
-  .nav-item {
-    border-right: 1px solid #cccccc;
   }
 }
