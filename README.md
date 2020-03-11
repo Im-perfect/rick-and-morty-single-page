@@ -2,7 +2,7 @@
 
 ## Rick and Morty Challenge
 
-Responsive single page app made with React => [Deploy](https://wonderful-heyrovsky-a953b1.netlify.com/)
+Responsive single page app made with React => [Deploy](https://wonderful-heyrovsky-a953b1.netlify.com/) :link:
 
 This project is using the API: https://rickandmortyapi.com/
 
@@ -14,8 +14,8 @@ This project is using the API: https://rickandmortyapi.com/
 
 ### Improvements
 - Add search feature
-- Navigation - Use NavLink instead of Link
-- Use StyledComponents
+- Navigation - Use NavLink instead of Link - Done :thumbsup:
+- Use StyledComponents - Partly done -> Navigation and pagination are using SC :nail_care:
 - Use Sass & BEM
     ```javascript
     .card {
